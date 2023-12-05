@@ -1,27 +1,20 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+session_start(); // Démarrer la session sur toutes les pages où vous utilisez la session
 
-function connectToDatabase()
-{
-    try {
-        return new PDO('mysql:host=' . $_ENV["DB_HOST"] . ';port=' . $_ENV["DB_PORT"] . ';dbname=' . $_ENV['DB_DATABASE'] . ';charset=utf8', $_ENV['DB_NAME'], $_ENV['DB_PASSWORD']);
-    } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
+// Vérifier si l'utilisateur est connecté
+if (isset($_SESSION['user'])) {
+    $username = $_SESSION['user'];
+    $welcomeMessage = "Bienvenue, $username!";
+} else {
+    $welcomeMessage = "Bienvenue sur la page d'accueil!";
 }
 
-try {
-    $pdo = connectToDatabase();
-
-    $query = $pdo->prepare('SELECT * FROM user');
-    $query->execute();
-    $users = $query->fetchAll(PDO::FETCH_ASSOC);
-
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
+// Traitement de la déconnexion
+if (isset($_POST['logout'])) {
+    session_destroy(); // Détruire la session
+    header('Location: index.php'); // Rediriger vers la page de connexion après la déconnexion
+    exit();
 }
 
 
@@ -29,13 +22,30 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
 </head>
+
 <body>
-    <h1>Welcome to the Homepage!</h1>
-    <?php echo $users[0]["email"]?>
+    <?php include('header.php'); ?>
+
+    <h1>
+        <?php echo $welcomeMessage; ?>
+    </h1>
+
+    <?php if (!isset($_SESSION['user'])): ?>
+        <!-- Afficher le bouton de connexion uniquement si l'utilisateur n'est pas connecté -->
+        <button onclick="location.href='connexion.php'">Login</button>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['user'])): ?>
+        <form method="post" action="">
+            <input type="submit" name="logout" value="Se déconnecter">
+        </form>
+    <?php endif; ?>
 </body>
+
 </html>

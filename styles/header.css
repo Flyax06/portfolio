@@ -1,0 +1,49 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #BAC2C2;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    color: #303532;
+    text-align: center;
+    font-size: 20px;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Ajout de styles pour rendre la barre de navigation responsive */
+@media screen and (max-width: 600px) {
+    li {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    a {
+        padding: 10px;
+    }
+}
