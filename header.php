@@ -15,9 +15,19 @@
             <li><a href="blog.php">Blog</a></li>
             <li><a href="contact.php">Contact</a></li>
             <?php if (isset($_SESSION['user'])): ?>
-                <li><a href="blogAdmin.php">Admin</a></li>
+                <li><a href="./blogAdmin.php">Admin</a></li>
             <?php endif; ?>
         </ul>
+        <?php if (!isset($_SESSION['user'])): ?>
+            <!-- Afficher le bouton de connexion uniquement si l'utilisateur n'est pas connecté -->
+            <button class="btn_connect" onclick="location.href='connexion.php'">Login</button>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['user'])): ?>
+            <form method="post" action="">
+                <input class="btn_connect" type="submit" name="logout" value="Logout">
+            </form>
+        <?php endif; ?>
     </nav>
 </body>
 
