@@ -34,9 +34,15 @@ try {
     <?php foreach ($articles as $article) { ?>
 
         <div>
-            <h3><?php echo $article['titre'] ?></h3>
-            <p><?php echo $article['contenu'] ?></p>
-            <p>Date de Publication: <?php echo $article['date_creation'] ?></p>
+            <h3>
+                <?php echo $article['titre'] ?>
+            </h3>
+            <p>
+                <?php echo $article['contenu'] ?>
+            </p>
+            <p>Date de Publication:
+                <?php echo $article['date_creation'] ?>
+            </p>
         </div>
 
     <?php } ?>
