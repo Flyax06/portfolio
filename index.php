@@ -57,7 +57,6 @@ try {
             </div>
         </div>
     </div>
-    <div class="trait"></div>
     <div class="container">
         <div class="content-2">
             <div class="title">Mes Compétences</div>
@@ -79,7 +78,6 @@ try {
             </div>
         </div>
     </div>
-    <div class="trait"></div>
     <div class="container">
         <div class="content-3">
             <div class="right">

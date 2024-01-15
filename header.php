@@ -11,11 +11,11 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="blog.php">Blog</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a class="routes" href="index.php">Accueil</a></li>
+            <li><a class="routes" href="blog.php">Blog</a></li>
+            <li><a class="routes" href="contact.php">Contact</a></li>
             <?php if (isset($_SESSION['user'])): ?>
-                <li><a href="./blogAdmin.php">Admin</a></li>
+                <li><a class="routes" href="./blogAdmin.php">Admin</a></li>
             <?php endif; ?>
         </ul>
         <?php if (!isset($_SESSION['user'])): ?>

@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1D201D;
+    color: #fff; /* Couleur de texte principale */
+}
+
+.title-contact {
+    text-align: center;
+}
+
+.form-contact {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #333; /* Couleur de fond plus sombre */
+    padding: 20px;
+    border: 1px solid #555; /* Bordure légèrement plus claire que le fond */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Couleur de texte sur fond sombre */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #bbb; /* Couleur de texte secondaire légèrement plus claire */
+}
+
+.contact-input,
+.message {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #555; /* Bordure légèrement plus claire que le fond */
+    border-radius: 3px;
+    background-color: #1D201D; /* Couleur de fond des inputs */
+    color: #fff; /* Couleur de texte dans les inputs */
+}
+
+.contact-input-submit {
+    background-color: #1D201D; /* Couleur de fond du bouton */
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.contact-input-submit:hover {
+    background-color: #333; /* Couleur de fond du bouton au survol */
+}
+
+p {
+    color: #bbb; /* Couleur de texte secondaire légèrement plus claire */
+}

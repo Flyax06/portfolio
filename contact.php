@@ -4,6 +4,14 @@ session_start();
 
 require_once('env.php');
 require_once('database.php');
+require_once('csrf.php');
+
+// Traitement de la déconnexion
+if (isset($_POST['logout'])) {
+    session_destroy(); // Détruire la session
+    header('Location: index.php'); // Rediriger vers la page de connexion après la déconnexion
+    exit();
+}
 
 class Contact
 {
@@ -37,11 +45,14 @@ try {
         $email = htmlspecialchars($_POST['email']);
         $sujet = htmlspecialchars($_POST['sujet']);
         $message = htmlspecialchars($_POST['message']);
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die('CSRF token validation failed');
+        }
 
         $result = $contactHandler->addMessage($nom, $email, $sujet, $message);
 
         if ($result) {
-            echo '<p>Votre message a été envoyé avec succès!</p>';
+    
         } else {
             echo '<p>Une erreur s\'est produite. Veuillez réessayer.</p>';
         }
@@ -58,26 +69,29 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/contact.css">
     <title>Document</title>
 </head>
 
 <body>
     <?php include('header.php'); ?>
-    <h2>Contactez-moi</h2>
-    <form method="post" action="">
+    <h2 class="title-contact">Contactez-moi</h2>
+    <form class="form-contact" method="post" action="">
         <label for="nom">Nom:</label>
-        <input type="text" id="nom" name="nom" required>
+        <input class="contact-input" type="text" id="nom" name="nom" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input class="contact-input" type="email" id="email" name="email" required>
 
         <label for="sujet">Sujet:</label>
-        <input type="text" id="sujet" name="sujet" required>
+        <input class="contact-input" type="text" id="sujet" name="sujet" required>
 
         <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+        <textarea class="message" id="message" name="message" required></textarea>
 
-        <input type="submit" value="Envoyer le message">
+        <input type="hidden" name="csrf_token" value="<?= generateCSRFToken(); ?>">
+
+        <input class="contact-input-submit" type="submit" value="Envoyer le message">
     </form>
 </body>
 

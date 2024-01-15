@@ -5,6 +5,7 @@ session_start(); // Démarrer la session pour stocker les informations de connex
 require_once('env.php');
 require_once('database.php');
 require_once('user.php');
+require_once('csrf.php');
 
 try {
     $database = new Database($DB_HOST, $DB_NAME, $DB_PASSWORD, $DB_DATABASE);
@@ -17,8 +18,12 @@ try {
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
 
+        if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            die('CSRF token validation failed');
+        }
+
         // Vérification des identifiants (vous devrez adapter cela en fonction de votre système)
-        if ($email === 'admin@gmail.com' && $password === 'admin') {
+        if ($email === $ADMIN_EMAIL && $password === $ADMIN_PASSWORD) {
             $_SESSION['user'] = $email; // Stocker l'utilisateur dans la session
             header('Location: index.php'); // Rediriger vers la page principale après la connexion
             exit();
@@ -58,6 +63,8 @@ try {
 
         <label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" required>
+
+        <input type="hidden" name="csrf_token" value="<?= generateCSRFToken(); ?>">
 
         <input type="submit" value="Se connecter">
     </form>

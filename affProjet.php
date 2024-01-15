@@ -28,20 +28,23 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/affProjet.css">
     <title>Document</title>
 </head>
 
 <body>
     <?php include('header.php'); ?>
 
-    <h2>Projet</h2>
+    <h2 class="title-affProjet">Projet</h2>
     <div>
-        <h3>
+        <h3 class="title-projet">
             <?php echo $getProjet['title'] ?>
         </h3>
-        <p>
+        <p class="title-desc">
             <?php echo $getProjet['desc'] ?>
         </p>
+
+        <img class="img-projet" src="./images/projet-<?php echo $id ?>.png" alt="">
     </div>
 
 </body>

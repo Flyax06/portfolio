@@ -24,7 +24,7 @@ li {
     margin-right: 20px; /* Ajoute de l'espace entre les éléments */
 }
 
-a {
+.routes {
     position: relative;
     display: block;
     color: #1D201D; /* Texte en couleur claire pour un meilleur contraste */
@@ -35,12 +35,12 @@ a {
     transition: background-color 0.3s, color 0.3s; /* Transition en douceur */
 }
 
-a:hover {
+.routes:hover {
     color: #1D201D; /* Couleur du texte au survol */
 }
 
-a::before,
-a::after {
+.routes::before,
+.routes::after {
     content: '';
     position: absolute;
     width: 0;
@@ -49,18 +49,18 @@ a::after {
     transition: width 0.3s; /* Transition en douceur */
 }
 
-a::before {
+.routes::before {
     top: 0;
     left: 0;
 }
 
-a::after {
+.routes::after {
     bottom: 0;
     right: 0;
 }
 
-a:hover::before,
-a:hover::after {
+.routes:hover::before,
+.routes:hover::after {
     width: 20%; /* Augmente la largeur des bordures au survol */
 }
 
@@ -86,7 +86,7 @@ a:hover::after {
         text-align: center;
     }
 
-    a {
+    .routes {
         padding: 10px;
     }
 }

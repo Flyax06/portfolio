@@ -1,0 +1,25 @@
+body {
+    background-color: #1D201D;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.title-affProjet {
+    color: #7E4FD6; /* Couleur du titre "Projet" */
+}
+
+.title-projet {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.title-desc {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.img-projet {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}

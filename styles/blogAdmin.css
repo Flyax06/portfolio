@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1D201D;
+    color: #fff; 
+}
+
+.admin-heading {
+    color: #fff; 
+    text-align: center;
+}
+
+.article-container {
+    background-color: #222; 
+    border: 1px solid #444; 
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+}
+
+.article-title {
+    color: #fff; 
+    text-align: center;
+}
+
+.article-content,
+.article-date {
+    color: #ccc; 
+}
+
+.article-form,
+.add-article-form {
+    margin-top: 10px;
+    background-color: #222;
+    border: 1px solid #444; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+}
+
+.article-form label,
+.add-article-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff; 
+}
+
+.article-form input,
+.article-form textarea,
+.add-article-form input,
+.add-article-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #444; 
+    border-radius: 3px;
+    background-color: #333; 
+    color: #fff; 
+}
+
+.update-button,
+.add-button,
+.delete-button {
+    background-color: #fff; 
+    color: #000; 
+    cursor: pointer;
+}
+
+.update-button:hover,
+.add-button:hover,
+.delete-button:hover {
+    background-color: #eee; 
+    color: #000; 
+}
+
+.delete-button {
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}

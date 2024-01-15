@@ -1,0 +1,55 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1D201D;
+    color: #fff; /* Couleur de texte principale */
+}
+
+h2 {
+    text-align: center;
+}
+
+.article {
+    background-color: #333; /* Couleur de fond plus sombre */
+    border: 1px solid #555; /* Bordure légèrement plus claire que le fond */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* Couleur de texte sur fond sombre */
+}
+
+h3 {
+    color: #bbb; /* Couleur de texte secondaire légèrement plus claire */
+}
+
+p {
+    color: #bbb; /* Couleur de texte secondaire légèrement plus claire */
+}
+
+.pagination {
+    color: #1D201D; /* Couleur de texte principale sur fond clair */
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #fff; /* Couleur de fond du bouton */
+}
+
+.pagination:hover {
+    background-color: #333; /* Couleur de fond du bouton au survol */
+    color: #fff; /* Couleur de texte sur fond sombre au survol */
+}
+
+.pagination_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
