@@ -43,7 +43,7 @@ try {
         <div class="content">
             <div class="right">
                 <h1 class="title">
-                    Bienvenue dans mon portfolio
+                    GOTTI Lorenzo
                 </h1>
                 <div class="text-1">
                     <p>Je suis passionné par le développement web et je crée des expériences numériques exceptionnelles.
@@ -111,6 +111,10 @@ try {
             </div>
         </div>
     </div>
+    <div class="trait"></div>
+    <footer class="footer">
+        <p>&copy; 2024 GOTTI Lorenzo - Portfolio</p>
+    </footer>
     <script src="./js/script.js"></script>
 </body>
 
