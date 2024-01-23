@@ -171,10 +171,25 @@ h3 {
 }
 
 .footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     background-color: #1D201D;
     text-align: center;
     bottom: 0;
     width: 100%;
     color: #fff;
     font-size: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
 }

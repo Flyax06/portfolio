@@ -113,7 +113,12 @@ try {
     </div>
     <div class="trait"></div>
     <footer class="footer">
-        <p>&copy; 2024 GOTTI Lorenzo - Portfolio</p>
+    <p>&copy; 2024 GOTTI Lorenzo - Portfolio</p>
+    <div class="social-icons">
+        <a href="https://github.com/Flyax06" target="_blank"><img class="icons" src="./images/github.png" alt="GitHub"></a>
+        <a href="https://www.linkedin.com/in/lorenzo-gotti-b8a473250/" target="_blank"><img class="icons" src="./images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://twitter.com/flyax06" target="_blank"><img class="icons" src="./images/twitter.png" alt="Twitter"></a>
+    </div>
     </footer>
     <script src="./js/script.js"></script>
 </body>
